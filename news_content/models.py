@@ -11,7 +11,7 @@ class Content(models.Model):
     pub_date = models.DateTimeField()
     guid = models.CharField(max_length=100)
     site_name = models.CharField(max_length=100)
-    site_logo = models.URLField(default=None, null=True)
+    site_logo = models.URLField(null=True)
 
     def __str__(self) -> str:
         """Returns a string representation of model"""
