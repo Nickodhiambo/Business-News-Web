@@ -25,5 +25,5 @@ class ContentTestCase(TestCase):
     def test_to_string(self):
         """Test model string representation"""
         self.assertEqual(
-                str(content), "Business Center: Business News"
+                str(self.content), "Business Center: Business News"
                 )
