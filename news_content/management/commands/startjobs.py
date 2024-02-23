@@ -1,8 +1,22 @@
+#Standard Library
+import logging
+
+#Django
+from django.conf import settings
 from django.core.management.base import BaseCommand
 
+#Third party
 import feedparser
 from dateutil import parser
+from apscheduler.schedulers.blocking import BlockingScheduler
+from apscheduler.triggers.cron import CronTrigger
+from django_apscheduler.jobstores import DjangoJobStore
+from django_apscheduler.models import DjangoJobExecution
+
+# My app
 from news_content.models import Content
+
+logger = logging.getLogger(__name__)
 
 
 def save_content_to_db(feed):
@@ -37,6 +51,43 @@ def fetch_financial_fortune():
 class Command(BaseCommand):
     """A custom command class"""
     def handle(self, *args, **kwargs):
-        fetch_business_daily()
-        fetch_african_business()
-        fetch_financial_fortune()
+        scheduler = BlockingScheduler(timezone=settings.TIME_ZONE)
+        scheduler.add_jobstore(DjangoJobStore(), "default")
+
+        scheduler.add_job(
+                fetch_business_daily,
+                trigger="interval",
+                minutes=2,
+                id="Business Daily",
+                max_instances=1,
+                replace_existing=True,
+                )
+        logger.info("Added job: The Business Daily.")
+
+        scheduler.add_job(
+                fetch_african_business,
+                trigger="interval",
+                minutes=2,
+                id="African Business",
+                max_instances=1,
+                replace_existing=True,
+                )
+        logger.info("Added job: The African Business.")
+        
+        scheduler.add_job(
+                fetch_financial_fortune,
+                trigger="interval",
+                minutes=2,
+                id="Financial Fortune",
+                max_instances=1,
+                replace_existing=True,
+                )
+        logger.info("Added job: The Financial Fortune.")
+
+        try:
+            logger.info("Starting scheduler...")
+            scheduler.start()
+        except KeyboardInterrupt:
+            logger.info("Stopping scheduler...")
+            scheduler.shutdown()
+            logger.info("Scheduler shut down successfully!")
