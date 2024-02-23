@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+	{% load static %}
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Business News Center</title>
-        <link rel="stylesheet", href="style.css">
+	<link rel="stylesheet" href="{% static 'style.css' %}">
     </head>
 
     <header>
         <div class="header-section">
-            <img src="images/logo.jpg" alt="logo image">
+		<img src="{% static 'images/logo.jpg' %}" alt="logo image">
             <nav class="nav-class">
-                <a href="">Home</a>
-                <a href="">About this site</a>
+		    <a href="{% url 'news_content:index' %}">Home</a>
+		    <a href="{% url 'news_content:about' %}">About this site</a>
             </nav>
         </div>
     </header>

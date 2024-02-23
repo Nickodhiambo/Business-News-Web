@@ -12,3 +12,8 @@ class ContentView(ListView):
         context = super().get_context_data(**kwargs)
         context['content'] = Content.objects.filter().order_by('-pub_date')[:10]
         return context
+
+def about_us(request):
+    """Processes the about page"""
+    template_name = 'about.html'
+    return render(request, template_name)
