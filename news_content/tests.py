@@ -43,3 +43,8 @@ class ContentTestCase(TestCase):
         """Test correct template used to render index"""
         response = self.client.get(reverse('news_content:index'))
         self.assertTemplateUsed(response, 'index.html')
+
+    def test_about_template(self):
+        """Test correct template used to render about"""
+        response = self.client.get(reverse('news_content:about'))
+        self.assertTemplateUsed(response, 'about.html')
