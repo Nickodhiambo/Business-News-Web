@@ -1,6 +1,7 @@
 from django.test import TestCase
 from .models import Content
 from django.utils import timezone
+from django.urls.base import reverse
 
 # Create your tests here.
 class ContentTestCase(TestCase):
@@ -27,3 +28,8 @@ class ContentTestCase(TestCase):
         self.assertEqual(
                 str(self.content), "Business Center: Business News"
                 )
+
+    def test_index_page_status(self):
+        """Tests that index page returs Http OK"""
+        response = self.client.get('/index/')
+        self.assertEqual(response.status_code, 200)
