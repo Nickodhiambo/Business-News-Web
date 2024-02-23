@@ -10,7 +10,7 @@ class ContentView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['content'] = Content.objects.filter().order_by('-pub_date')[:10]
+        context['contents'] = Content.objects.filter().order_by('-pub_date')[:10]
         return context
 
 def about_us(request):
