@@ -38,3 +38,8 @@ class ContentTestCase(TestCase):
         """Test about page returns OK"""
         response = self.client.get('/about/')
         self.assertEqual(response.status_code, 200)
+
+    def test_index_template(self):
+        """Test correct template used to render index"""
+        response = self.client.get(reverse('news_content:index'))
+        self.assertTemplateUsed(response, 'index.html')
