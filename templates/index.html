@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="{% static 'style.css' %}">
     </head>
 
-    <header>
+    <!--<header>
         <div class="header-section">
 		<img src="{% static 'images/logo.jpg' %}" alt="logo image">
             <nav class="nav-class">
@@ -16,9 +16,18 @@
 		    <a href="{% url 'news_content:about' %}">About this site</a>
             </nav>
         </div>
-    </header>
+    </header>-->
     
     <body>
+        <header>
+        <div class="header-section">
+                <img src="{% static 'images/logo.jpg' %}" alt="logo image">
+            <nav class="nav-class">
+                    <a href="{% url 'news_content:index' %}">Home</a>
+                    <a href="{% url 'news_content:about' %}">About this site</a>
+            </nav>
+        </div>
+        </header>
         <div class="container">
 	    {% for content in contents %}
             <div class="row">
@@ -34,8 +43,8 @@
         <footer class="footer-section">
             <p>&copy; Business news site 2024</p>
             <nav class="nav-class">
-                <a href="index.html" target="blank">Home</a>
-                <a href="about.html" target="blank">About this site</a>
+                    <a href="{% url 'news_content:index' %}" target="blank">Home</a>
+                    <a href="{% url 'news_content:about' %}" target="blank">About this site</a>
             </nav>
         </footer>
     </body>
