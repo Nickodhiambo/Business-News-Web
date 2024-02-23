@@ -33,3 +33,8 @@ class ContentTestCase(TestCase):
         """Tests that index page returs Http OK"""
         response = self.client.get('/index/')
         self.assertEqual(response.status_code, 200)
+
+    def test_about_page_status(self):
+        """Test about page returns OK"""
+        response = self.client.get('/about/')
+        self.assertEqual(response.status_code, 200)
