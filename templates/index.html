@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	{% load static %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Business News Center</title>
+        <link rel="stylesheet", href="{% static 'style.css' %}">
+    </head>
+
+    <header>
+        <div class="header-section">
+            <img src="images/logo.jpg" alt="logo image">
+            <nav class="nav-class">
+                <a href="">Home</a>
+                <a href="">About this site</a>
+            </nav>
+        </div>
+    </header>
+    
+    <body>
+        <div class="container">
+            <div class="row">
+		{% for content in contents %}
+                <img src="{{ content.image }}" alt="{{ content.site_name }}" class="item-image">
+                <div class="contents">
+                    <h2>{{ content.title }}</h2>
+                    <p>{{ content.description }}</p>
+                    <a href="{{ content.link }}">Read more</a>
+                </div>
+            </div>
+        </div>
+        <footer class="footer-section">
+            <p>&copy; Business news site 2024</p>
+            <nav class="nav-class">
+                <a href="index.html" target="blank">Home</a>
+                <a href="about.html" target="blank">About this site</a>
+            </nav>
+        </footer>
+    </body>
+</html>

@@ -5,7 +5,7 @@ from .models import Content
 # Create your views here.
 class ContentView(ListView):
     """Retrieves news content data from db"""
-    template_name = 'content.html'
+    template_name = 'index.html'
     model = Content
 
     def get_context_data(self, **kwargs):
