@@ -20,8 +20,8 @@
     
     <body>
         <div class="container">
+	    {% for content in contents %}
             <div class="row">
-		{% for content in contents %}
                 <img src="{{ content.image }}" alt="{{ content.site_name }}" class="item-image">
                 <div class="contents">
                     <h2>{{ content.title }}</h2>
