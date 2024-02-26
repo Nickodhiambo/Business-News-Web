@@ -34,10 +34,14 @@
 }
 
 .container .nav-class a{
-    color: #fff;
+    color: #000;
     text-decoration: none;
     margin: 0 5px;
-    font-size: 1rem;
+    font-size: 14px;
+    border: 1px solid rgba(0,0,0,0.5);
+    background: #f2f2f2;
+    border-radius: 10px;
+    padding: 7px;
 }
 
 .container header nav a:hover{
