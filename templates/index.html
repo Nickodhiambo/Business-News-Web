@@ -17,8 +17,9 @@
                     <a href="{% url 'news_content:about' %}">About this site</a>
 		    {% if user.is_authenticated %}
 		        Hello, {{ user }}
+			<a href="{% url 'users:logout' %}">Log out</a>
 		    {% else %}
-		        <a href="{% url 'users:login' %}">Login</a>
+		        <a href="{% url 'users:login' %}">Log in</a>
 		    {% endif %}
                 </nav>
             </header>
@@ -41,8 +42,9 @@
                     <a href="{% url 'news_content:about' %}" target="blank">About this site</a>
 	            {% if user.is_authenticated %}
                         Hello, {{ user }}
+			<a href ="{% url 'news_content:index' %}">Log out</a>
                     {% else %}
-                        <a href="{% url 'users:login' %}">Login</a>
+                        <a href="{% url 'users:login' %}">Log in</a>
                     {% endif %}
                 </nav>
             </footer>
