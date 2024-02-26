@@ -12,22 +12,32 @@
         <div class="container">
             <header>
                 <img src="{% static 'images/logo.jpg' %}" alt="logo image">
-                <nav>
+                <nav class="nav-class">
                     <a href="{% url 'news_content:index' %}">Home</a>
-                    <a href="{% url 'news_content:about' %}">About this site</a>
-		    <a href="{% url 'users:login' %}">Login</a>
+                    <a href="{% url 'news_content:about' %}">About</a>
+		    {% if user.is_authenticated %}
+		        Hello, {{ user }}
+			<a href="{% url 'users:logout' %}">Log out</a>
+		    {% else %}
+		        <a href="{% url 'users:login' %}">Log in</a>
+		    {% endif %}
                 </nav>
             </header>
 
             <div class="about-content">
-		    <p>Africa is getting entrepreneurial. Its economy is rapidly growing. According to an <a href="https://www.afdb.org/en/news-and-events/press-releases/africas-economic-growth-outpace-global-forecast-2023-2024-african-development-bank-biannual-report-58293#:~:text=Africa%20is%20set%20to%20outperform,4%25%20in%202023%20and%202024." target="blank">African Development Bank</a> January 2024 report, the average African GDP is set to surpass the global average by 2% in the next two years. With major business events happening, and set to happen in Africa in the next few years, we believe an appetite for accurate and trusted business information will increase. This website sources latest business information from trusted and reputable African business media and avails them in one place for your convenience. No need to scour the web. <b>All in one place!</b> </p>
+		    <p>Africa is getting entrepreneurial. Its economy is rapidly growing. According to an <a href="https://www.afdb.org/en/news-and-events/press-releases/africas-economic-growth-outpace-global-forecast-2023-2024-african-development-bank-biannual-report-58293#:~:text=Africa%20is%20set%20to%20outperform,4%25%20in%202023%20and%202024." target="blank">African Development Bank's January 2024 report</a>, the average African GDP is set to surpass the global average by 2% in the next two years. With major business events happening, and set to happen in Africa in the next few years, we believe an appetite for accurate and trusted business information will increase. This website sources latest business information from trusted and reputable African business media and avails them in one place for your convenience. No need to scour the web. <b>All in one place!</b> </p>
             </div>
             <footer>
                 <small>&copy; Business news site 2024</small>
-                <nav>
+                <nav class="nav-class">
                     <a href="{% url 'news_content:index' %}" target="blank">Home</a>
-                    <a href="{% url 'news_content:about' %}" target="blank">About this site</a>
-		    <a href="{% url 'users:login' %}">Login</a>
+                    <a href="{% url 'news_content:about' %}" target="blank">About</a>
+		    {% if user.is_authenticated %}
+		        Hello, {{ user }}
+			<a href="{% url 'users:logout' %}">Log out</a>
+		    {% else %}
+		        <a href="{% url 'users:login' %}">Log in</a>
+		    {% endif %}
                 </nav>
             </footer>
     </body>
