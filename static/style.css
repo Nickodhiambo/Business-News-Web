@@ -123,3 +123,69 @@
 .about-content p a:hover{
     color: #8289c9;
 }
+
+/* Login */
+.login-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background: #8289c9;
+}
+
+.login-form form{
+    width: 850px;
+    background: #fff;
+    margin: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+form p{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+}
+
+form p.username{
+    margin-top: 20px;
+}
+
+form p.password{
+    margin: 20px 0 30px;
+    padding: 10px 0;
+}
+
+form p label{
+    font-size: 1.13rem;
+    font-weight: 600;
+    min-width: 100px;
+}
+
+form p input{
+    border-radius: 10px;
+    background: #f2f2f2;
+    height: 30px;
+    width: 33%;
+    border: 2px solid #ccc;
+    text-align: center;
+    outline: none;
+}
+
+form button{
+    background: #5E63BA;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 10px 40px;
+    text-align: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transform: translateX(50%);
+}
