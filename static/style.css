@@ -8,7 +8,7 @@
 
 .container{
     max-width: 100%;
-    height: 100vh;
+    height: 100%;
     background: #fff;
 }
 
@@ -101,5 +101,25 @@
 
 /* About page */
 .about-content{
-    height: 100%;
+    height: 100vh;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 50px;
+    padding: 20px 30px;
+    margin: 50px 30px;
+}
+
+.about-content p b{
+    color: #5E63BA;
+    font-size: 1.5rem;
+}
+
+.about-content p a{
+    text-decoration: none;
+    color: #5E63BA;
+}
+
+.about-content p a:hover{
+    color: #8289c9;
 }
