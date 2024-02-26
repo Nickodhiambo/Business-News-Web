@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # My apps
     'news_content',
+    'users',
 
     # Third party apps
     'django_apscheduler',
