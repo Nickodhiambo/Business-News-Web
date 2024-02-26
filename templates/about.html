@@ -5,26 +5,25 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Business News Center</title>
-	<link rel="stylesheet" href="{% static 'style.css' %}">
+        <link rel="stylesheet", href="{% static 'style.css' %}">
     </head>
-
-    <header>
-        <div class="header-section">
-		<img src="{% static 'images/logo.jpg' %}" alt="logo image">
-            <nav class="nav-class">
-		    <a href="{% url 'news_content:index' %}">Home</a>
-		    <a href="{% url 'news_content:about' %}">About this site</a>
-            </nav>
-        </div>
-    </header>
+    
     <body>
-        <div class="container"></div>
+        <div class="container">
+            <header>
+                <img src="{% static 'images/logo.jpg' %}" alt="logo image">
+                <nav>
+                    <a href="{% url 'news_content:index' %}">Home</a>
+                    <a href="{% url 'news_content:about' %}">About this site</a>
+                </nav>
+            </header>
+            <footer>
+                <small>&copy; Business news site 2024</small>
+                <nav>
+                    <a href="{% url 'news_content:index' %}" target="blank">Home</a>
+                    <a href="{% url 'news_content:about' %}" target="blank">About this site</a>
+                </nav>
+            </footer>
+        </div>
     </body>
-    <footer class="footer-section">
-        <p>&copy; Business news site 2024</p>
-        <nav class="nav-class">
-            <a href="">Home</a>
-            <a href="">About this site</a>
-        </nav>
-    </footer>
 </html>
