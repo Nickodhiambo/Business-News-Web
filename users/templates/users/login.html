@@ -10,7 +10,8 @@
     <body>
         <div class="login-form">
             <form method="post" action="/users/login/">
-                <input type="hidden" name="csrfmiddlewaretoken" value="4VOf5qaNXCRbKLQwog6nei7YGgX4Ud6wK1EZ2pXiHWdSIKY5ZJMHclBidcvqtjkG">
+		<!-- <input type="hidden" name="csrfmiddlewaretoken" value="4VOf5qaNXCRbKLQwog6nei7YGgX4Ud6wK1EZ2pXiHWdSIKY5ZJMHclBidcvqtjkG">-->
+		{% csrf_token %}
                 <p class="username">
                     <label for="id_username">Username:</label>
                     <input type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username" placeholder="Enter your email">

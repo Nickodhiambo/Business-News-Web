@@ -12,10 +12,14 @@
         <div class="container">
             <header>
                 <img src="{% static 'images/logo.jpg' %}" alt="logo image">
-                <nav>
+                <nav class="nav-class">
                     <a href="{% url 'news_content:index' %}">Home</a>
                     <a href="{% url 'news_content:about' %}">About this site</a>
-		    <a href="{% url 'users:login' %}">Login</a>
+		    {% if user.is_authenticated %}
+		        Hello, {{ user }}
+		    {% else %}
+		        <a href="{% url 'users:login' %}">Login</a>
+		    {% endif %}
                 </nav>
             </header>
             <div class="main">
@@ -32,10 +36,14 @@
             </div>
             <footer>
                 <small>&copy; Business news site 2024</small>
-                <nav>
+		<nav class="nav-class">
                     <a href="{% url 'news_content:index' %}" target="blank">Home</a>
                     <a href="{% url 'news_content:about' %}" target="blank">About this site</a>
-		    <a href="{% url 'users:login' %}">Login</a>
+	            {% if user.is_authenticated %}
+                        Hello, {{ user }}
+                    {% else %}
+                        <a href="{% url 'users:login' %}">Login</a>
+                    {% endif %}
                 </nav>
             </footer>
         </div>
