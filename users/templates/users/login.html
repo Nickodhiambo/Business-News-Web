@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Business News Center</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="login-form">
+            <form method="post" action="/users/login/">
+                <input type="hidden" name="csrfmiddlewaretoken" value="4VOf5qaNXCRbKLQwog6nei7YGgX4Ud6wK1EZ2pXiHWdSIKY5ZJMHclBidcvqtjkG">
+                <p class="username">
+                    <label for="id_username">Username:</label>
+                    <input type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username" placeholder="Enter your email">
+                </p>
+                <p class="password">
+                    <label for="id_password">Password:</label>
+                    <input type="password" name="password" autocomplete="current-password" required="" id="id_password">
+                </p>
+
+                <button name="submit">Log in</button>
+                <input type="hidden" name="next" value="/index/">
+            </form>
+        </div>
+    </body>
+</html>
