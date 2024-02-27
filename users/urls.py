@@ -10,4 +10,7 @@ urlpatterns = [
 
         #Log out
         path('logout/', views.logout_view, name='logout'),
+
+        #Register
+        path('register/', views.register, name='register'),
         ]
