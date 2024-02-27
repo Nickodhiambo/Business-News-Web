@@ -4,7 +4,9 @@
     box-sizing: border-box;
     font-family: "Open sans", sans-serif;
 }
-
+p.errors{
+    color: #721c24;
+    background: #f8d7da;
 
 .container{
     max-width: 100%;

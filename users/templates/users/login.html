@@ -8,6 +8,9 @@
 	<link rel="stylesheet" href="{% static 'style.css' %}">
     </head>
     <body>
+	{% if form.errors %}
+	    <p class="error">Invalid username or password. Please try again</p>
+	    {% endif %}
         <div class="login-form">
             <form class="log" method="post" action="/users/login/">
 		<!-- <input type="hidden" name="csrfmiddlewaretoken" value="4VOf5qaNXCRbKLQwog6nei7YGgX4Ud6wK1EZ2pXiHWdSIKY5ZJMHclBidcvqtjkG">-->

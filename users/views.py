@@ -19,13 +19,22 @@ def register(request):
     else:
         #Process completed form
         form = UserCreationForm(data=request.POST)
+        
         if form.is_valid:
-            new_user = form.save()
-            #Authenticates the new user
-            authenticated_user = authenticate(username=new_user.username,
-                    password=request.POST['password1'])
-            #Logs in the authenticated user, redirect to homepage
-            login(request, authenticated_user)
-            return HttpResponseRedirect(reverse('news_content:index'))
+            try:
+                new_user = form.save()
+                #Authenticates the new user
+                authenticated_user = authenticate(username=new_user.username,
+                        password=request.POST['password1'])
+                #Logs in the authenticated user, redirect to homepage
+                login(request, authenticated_user)
+                return HttpResponseRedirect(reverse('news_content:index'))
+            except ValueError as e:
+                # Handle validation errors
+                if 'username' in str(e):
+                    form.add_error('username', str(e))
+                if 'password' in str(e):
+                    form.add_error('password1', str(e))
+
     context = {'form': form}
     return render(request, 'users/register.html', context)

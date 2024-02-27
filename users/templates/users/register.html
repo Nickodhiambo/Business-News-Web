@@ -8,6 +8,9 @@
         <link rel="stylesheet" href="{% static 'style.css' %}">
     </head>
     <body>
+	{% if form.errors %}
+	    <p>Invalid username or password pattern. Please retry</p>
+	{% endif %}
         <div class="register-form">
             <form class="reg" method="post" action="/users/register/">
 		{% csrf_token %}
