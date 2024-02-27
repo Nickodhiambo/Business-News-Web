@@ -146,7 +146,7 @@
     background: #8289c9;
 }
 
-.login-form form{
+.login-form form.log{
     width: 850px;
     background: #fff;
     margin: 50px;
@@ -155,29 +155,29 @@
     text-align: center;
 }
 
-form p{
+form.log p{
     display: flex;
     justify-content: center;
     gap: 10px;
     padding: 15px;
 }
 
-form p.username{
+form.log p.username{
     margin-top: 20px;
 }
 
-form p.password{
+form.log p.password{
     margin: 20px 0 30px;
     padding: 10px 0;
 }
 
-form p label{
+form.log p label{
     font-size: 1.13rem;
     font-weight: 600;
     min-width: 100px;
 }
 
-form p input{
+form.log p input{
     border-radius: 10px;
     background: #f2f2f2;
     height: 30px;
