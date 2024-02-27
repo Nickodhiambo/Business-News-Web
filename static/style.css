@@ -187,7 +187,7 @@ form p input{
     outline: none;
 }
 
-form button{
+:where(form.log, form.reg) button{
     background: #5E63BA;
     font-size: 1rem;
     font-weight: 600;
@@ -199,5 +199,76 @@ form button{
     border: none;
     outline: none;
     cursor: pointer;
+}
+
+form.log button{
     transform: translateX(50%);
+}
+
+/* Register */
+.register-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #8289c9;
+    height: 100%;
+    width: 100%;
+}
+
+.register-form form.reg{
+    background:#fff;
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+    padding: 20px 30px;
+}
+
+.reg .header-form p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #8289c9;
+    height: 50px;
+    margin-top: 0;
+    padding: 0;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600;
+}
+
+form.reg p{
+    margin: 30px 0;
+    font-size: 1.15rem;
+}
+
+.form-input{
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.reg-label{
+    color: #000;
+    font-weight: 600;
+}
+
+.reg-input{
+    border-radius: 10px;
+    background: #f2f2f2;
+    height: 30px;
+    border: 2px solid #ccc;
+    text-align: center;
+    outline: none;
+}
+
+form ul.help-text{
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 30px auto;
+    padding: 10px;
+}
+
+form.reg button{
+    transform: translateX(100px);
 }
