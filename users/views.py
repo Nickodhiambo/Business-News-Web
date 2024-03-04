@@ -9,7 +9,7 @@ from django.contrib.auth.forms import UserCreationForm
 def logout_view(request):
     """Logs the user out"""
     logout(request)
-    return HttpResponseRedirect(reverse('news_content:index'))
+    return HttpResponseRedirect(reverse('news_content:about'))
 
 
 def register(request):
