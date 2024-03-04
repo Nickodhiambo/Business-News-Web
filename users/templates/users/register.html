@@ -9,7 +9,7 @@
     </head>
     <body>
 	{% if form.errors %}
-	    <p>Invalid username or password pattern. Please retry</p>
+	    <p class="errors">Invalid username or password pattern. Please retry</p>
 	{% endif %}
         <div class="register-form">
             <form class="reg" method="post" action="/users/register/">

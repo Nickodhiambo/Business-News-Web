@@ -1,8 +1,12 @@
 from django.shortcuts import render
 from django.views.generic import ListView
 from .models import Content
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
+
+#@login_required
 class ContentView(ListView):
     """Retrieves news content data from db"""
     template_name = 'index.html'

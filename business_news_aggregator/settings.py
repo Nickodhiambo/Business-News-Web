@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    #custom user model app
+    'django_use_email_as_username.apps.DjangoUseEmailAsUsernameConfig',
+    'custom_user.apps.CustomUserConfig',
+
     # My apps
     'news_content',
     'users',
@@ -150,3 +154,9 @@ LOGGING = {
         "level": "INFO",
     },
 }
+
+# Login URL
+LOGIN_URL = '/users/login/'
+
+# In your settings.py file
+AUTH_USER_MODEL = 'custom_user.User'
